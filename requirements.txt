@@ -1,0 +1,11 @@
+torch
+python-dotenv
+fastapi
+uvicorn
+transformers
+fastapi
+fastapi_jwt_auth
+passlib
+wheel
+bcrypt
+python-multipart
