@@ -8,7 +8,7 @@
 
 # 🧠 AI Chatbot with File Ingestion and Semantic Search
 
-This project is an AI-powered chatbot system built with **FastAPI** that allows users to upload `.txt` and `.zip` files, processes their contents using advanced NLP models, and interacts with users through semantically meaningful responses.
+This project is a hybrid architecture that combines semantic retrieval with large language model (LLM) generation. Uploaded .txt or .zip files are parsed, and their contents are broken into text segments. Each segment is embedded using a transformer-based sentence encoder (multi-qa-mpnet-base-dot-v1), generating vector representations that are stored for efficient similarity search. When a user submits a query, it is first corrected for typos using a sequence-to-sequence spelling correction model. The corrected query is then embedded in the same vector space, and cosine similarity is used to identify the most semantically relevant document segments. These top-matching segments are passed, along with the original user query, to a generative LLM (flan-t5-large), which synthesizes a final response. This architecture ensures accurate information retrieval from user-uploaded content while leveraging the fluency and reasoning capabilities of LLMs, making it ideal for use cases like document-based chatbots, knowledge assistants, and smart search interfaces.
 
 ### How do I get set up? ###
 
